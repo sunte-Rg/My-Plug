@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Pullrefresh demo</title>
+</head>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/pullRefresh.js" type="text/javascript"></script>
+<style type="text/css">
+
+    body{background: #d6d6d6;}
+    *{margin:0;padding:0;}
+    #content{with:100%;}
+    .content_item{
+        text-align: center;
+        width:100%;
+        background: #999999 ;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #d6d6d6;
+    }
+    #loading{
+        text-align: center;
+        background: #000000;
+        color: aliceblue;
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+<div id = "content"  >
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+    <p class = "content_item">测试数据</p>
+</div>
+<div id = "loading">
+    <div  class = "loading">上拉加载</div>
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function(){
+        new pullRefresh().init({
+            "slideId":"content",
+            "loadingId":"loading",
+            "handEnd":function(callFun){
+                setTimeout(function(){
+                    if(Math.random() > 0.3) {
+                        var i = 5 ;
+                        while(i--)
+                            $("#content").append('<p class = "content_item">测试数据'+i+'</p>');
+                        callFun();
+                    }else
+                        callFun("加载失败，网络不给力啊~！！！！");
+                },2222);//模拟数据加载
+            }
+        });
+        var a = "3423;34123;324;123;4ewr3"
+        alert(a.substring(0,a.indexOf(';')));
+        test();
+    };
+
+
+    function test() {
+        var p = [
+            ["白", "绿色"],
+            ["12码", "13码", "14码"],
+            ["男", "女"],
+            ["中国", "日本"]
+        ];
+        var arr = test1(p,'-');
+        for (var i in arr)  console.log(arr[i]);
+    }
+
+
+    /**
+     * 思路：按照每两个数组合并成一个排列组合数组，以此类推，直到最后一个
+     * 假如多个数组的长度分别为  a、b、c........
+     * 次数：a*b+a*b*c+.....
+     */
+    function test1(p,str){
+        var index = 0;
+        //初始化第一个数组
+        var arr = p[index];
+        //数组中的下个元素是否有值
+        var num = 0 ;
+        while (p[++index]) {
+            /**
+             * 合并为一个排列组合数组
+             * arr1 已经合并的排列组合数组
+             * arr2 需要合并的数组
+             * str 合并分隔符
+             */
+            arr = (function (arr1, arr2, str) {
+                var arr = Array();
+                for (var i in arr1) {
+                    for (var j in arr2) {
+                        arr.push(arr1[i] + str + arr2[j]);
+                        num++;
+                    }
+                }
+                return arr;
+            })(arr, p[index], str);
+        }
+        console.log("循环次数："+num);
+        return arr ;
+    }
+
+
+</script>
+</html>
