@@ -1,0 +1,123 @@
+@charset "utf-8";
+body {
+  color: #333;
+  background: #fff;
+  padding: 6px 0 0;
+  margin: 0;
+  position: relative;
+  min-width: 1024px;
+  font-family: arial;
+}
+p, form, ol, ul, li, dl, dt, dd, h3 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+table, img {
+  border:0;
+}
+.border(whole,@color,@height:1px){
+  border:@height solid @color ;
+}
+.border(top,@color,@height:1px){
+  border-top:@height solid @color ;
+}
+.border(bottom,@color,@height:1px){
+  border-bottom:@height solid @color ;
+}
+.border(right,@color,@height:1px){
+  border-right:@height solid @color ;
+}
+.border(left,@color,@height:1px){
+  border-left:@height solid @color ;
+}
+.float(@direction:left){
+  float: @direction;
+  display: inline;
+}
+.ele_size(@width,@height){width:@width;height:@height;}
+.position_ab(@top,@right,@bottom,@left){position:absolute;top:@top;right:@right;bottom:@bottom;left:@left;}
+
+.title {
+  .ele_size(100%,49px);
+  .border(bottom,#EBEBEB);
+  min-width:1024px;
+  position:fixed;
+  z-index:999;
+
+  &_logo {
+    .float;
+    .ele_size(101px,auto);
+    margin: 0 10px;
+  }
+
+  &_search {
+    .float;
+    .border(whole,grey);
+    .ele_size(530px,32px);
+    margin:4px 0px 0px 15px;
+    padding-right:-5px;
+    position: relative;
+  }
+  &_search_input{
+    .ele_size(395px,32px);
+    margin-left:5px;
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding-left:10px;
+
+  }
+  &_search_camera{
+    .ele_size(18px,18px);
+    .position_ab(8px,auto,auto,400px);
+    background: url("../img/camera.png") 0 0;
+    display: block;
+
+    &:hover{background-position: 0 -20px;}
+  }
+  button{
+    .ele_size(100px,34px);
+    .position_ab(-1px,-1px,auto,auto);
+    background-color:#3385FF;
+    color:#fff;
+    border:none;
+  }
+
+  &_menu{
+    .float(right);
+    .ele_size(200px,auto);
+    font-size:12px;
+    margin:10px 15px 0 0 ;
+    a{
+      color:grey;text-decoration: underline;margin-left:20px;
+    }
+    &_set{
+      position: relative;
+      i{
+        .ele_size(0,0);
+        .border(whole,transparent,4px);
+        .border(top,grey,4px);
+        .position_ab(5px,auto,auto,auto);
+      }
+      ul{
+        .ele_size(60px,80px);
+        .position_ab(15px,auto,auto,-40px);
+        .border(whole,grey);
+        text-align: center;
+        display:none;
+      }
+      &:hover{
+        ul{display:block;}
+      }
+    }
+  }
+}
