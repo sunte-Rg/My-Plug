@@ -1,0 +1,129 @@
+@charset "utf-8";
+body {
+  color: #333;
+  background: #fff;
+  padding: 6px 0 0;
+  margin: 0;
+  position: relative;
+  min-width: 1024px;
+  font-family: arial;
+}
+p,
+form,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+h3 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+table,
+img {
+  border: 0;
+}
+.ripple {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px 100px 100px 100px;
+  -o-border-radius: 100px 100px 100px 100px;
+  -ms-border-radius: 100px 100px 100px 100px;
+  -webkit-border-radius: 100px 100px 100px 100px;
+  -moz-border-radius: 100px 100px 100px 100px;
+  border: 4px solid #9ED18B;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  margin: 10px;
+  z-index: 3;
+  overflow: hidden;
+}
+.ripple_content {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px 10px 10px 10px;
+  -o-border-radius: 10px 10px 10px 10px;
+  -ms-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  position: absolute;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: #adfe9a;
+  z-index: 1;
+}
+.ripple_baffle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50px 50px 50px 50px;
+  -o-border-radius: 50px 50px 50px 50px;
+  -ms-border-radius: 50px 50px 50px 50px;
+  -webkit-border-radius: 50px 50px 50px 50px;
+  -moz-border-radius: 50px 50px 50px 50px;
+  position: absolute;
+  top: -150px;
+  right: auto;
+  bottom: auto;
+  left: -45px;
+  -webkit-animation: mytest 5s linear 0s infinite normal;
+  -moz-animation: mytest 5s linear 0s infinite normal;
+  -ms-animation: mytest 5s linear 0s infinite normal;
+  -o-animation: mytest 5s linear 0s infinite normal;
+  animation: mytest 5s linear 0s infinite normal;
+  background-color: #FFFFFF;
+  z-index: 2;
+}
+@keyframes mytest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes mytest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes mytest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes mytest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes mytest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

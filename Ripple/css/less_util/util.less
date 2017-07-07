@@ -1,0 +1,60 @@
+@charset "utf-8";
+body {  color: #333;  background: #fff;  padding: 6px 0 0;  margin: 0;  position: relative;  min-width: 1024px;  font-family: arial;  }
+p, form, ol, ul, li, dl, dt, dd, h3 {  margin: 0;  padding: 0;  list-style: none;  }
+input {  padding-top: 0;  padding-bottom: 0;  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;  }
+table, img {  border:0;  }
+
+.border(whole,@color,@height:1px){  border:@height solid @color ;  }
+.border(top,@color,@height:1px){  border-top:@height solid @color ;  }
+.border(bottom,@color,@height:1px){  border-bottom:@height solid @color ;  }
+.border(right,@color,@height:1px){  border-right:@height solid @color ;  }
+.border(left,@color,@height:1px){  border-left:@height solid @color ;  }
+
+.float(@direction:left){  float: @direction;  display: inline;  }
+.ele_size(@width,@height){width:@width;height:@height;}
+.position_ab(@top:auto,@right:auto,@bottom:auto,@left:auto){position:absolute;top:@top;right:@right;bottom:@bottom;left:@left;}
+.position_re(@top:auto,@right:auto,@bottom:auto,@left:auto){position:relative;top:@top;right:@right;bottom:@bottom;left:@left;}
+.position_fi(@top:auto,@right:auto,@bottom:auto,@left:auto){position:fixed;top:@top;right:@right;bottom:@bottom;left:@left;}
+.border-radius(@top:auto,@right:@top,@bottom:@top,@left:@top){
+  border-radius: @top @right @bottom @left;
+  -o-border-radius: @top @right @bottom @left;
+  -ms-border-radius: @top @right @bottom @left;
+  -webkit-border-radius: @top @right @bottom @left;
+  -moz-border-radius: @top @right @bottom @left;
+}
+.keyframes_rotate(@name,@angle_start,@angle_end){
+  @keyframes @name
+  {
+    from { transform: rotate(@angle_start)}
+    to {transform: rotate(@angle_end) }
+  }
+  @-o-keyframes @name
+  {
+    from { transform: rotate(@angle_start)}
+    to {transform: rotate(@angle_end) }
+  }
+  @-webkit-keyframes @name
+  {
+    from { transform: rotate(@angle_start)}
+    to {transform: rotate(@angle_end) }
+  }
+  @-moz-keyframes @name
+  {
+    from { transform: rotate(@angle_start)}
+    to {transform: rotate(@angle_end) }
+  }
+  @-ms-keyframes @name
+  {
+    from { transform: rotate(@angle_start)}
+    to {transform: rotate(@angle_end) }
+  }
+
+}
+
+.animation_rotate(@animation-name,@animation-duration,@animation-timing-function,@animation-delay,@animation-iteration-count,@animation-direction){
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  -ms-animation: @arguments;
+  -o-animation:  @arguments;
+  animation: @arguments;
+}
