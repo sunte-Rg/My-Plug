@@ -91,7 +91,6 @@ pullRefresh.prototype.move = function() {
                     }
                 }
                 var loadingMarginBottom = !self.loadingObj.style.marginBottom?"10px":self.loadingObj.style.marginBottom;
-                console.log((self.moveDistance));
                 self.loadingObj.style.marginBottom = (parseInt(loadingMarginBottom.replace('px', '')) + self.moveDistance) +"px";
                 //拉伸限度变小
                 self.moveDistance > 0.2 ? self.moveDistance -= 0.2 : self.moveDistance = 0;
