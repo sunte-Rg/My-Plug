@@ -4,11 +4,11 @@
 顺便放上了自己的 笔记分享一下，勿喷。。
 
 
-# Pull-down refresh
+## Pull-down refresh
 上拉刷新插件
 
 
-# less 
+## less 
 学习less的demo，以及自己写的一个简单的bat自动编译脚本
 
 less介绍 
@@ -16,3 +16,6 @@ http://note.youdao.com/noteshare?id=3f9df38708bf1ac3984fc26640a2c1f7&sub=WEB9ab2
 
 我的less练习 
 http://note.youdao.com/share/?id=34d7584f667bfdce8b682cf523b033f2&type=note#/
+
+## Ripple
+使用css3实现的波动水球效果，详情见代码
