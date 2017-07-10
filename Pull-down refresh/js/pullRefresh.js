@@ -97,8 +97,8 @@ pullRefresh.prototype.move = function() {
                 self.moveDistance > 0.2 ? self.moveDistance -= 0.2 : self.moveDistance = 0;
             }
             self.scrollHeight = scrollTop;
-        } else if (scrollTop - self.scrollHeight < 0) {   //放弃加载
-            self.moveFlag = false;    //标识  已移至底部
+        } else if (scrollTop - self.scrollHeight < 0&&self.loadingFlag) {   //放弃加载
+            self.moveFlag = false;    //标识  未移至底部
             self.loadingObj.style.marginBottom = '40px';
             self.loadingObj.innerText = self.initPrompt;
         }
