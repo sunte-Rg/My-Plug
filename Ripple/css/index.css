@@ -66,7 +66,7 @@ img {
   background-color: #adfe9a;
   z-index: 1;
 }
-.ripple_baffle {
+.ripple_content:before {
   width: 180px;
   height: 180px;
   border-radius: 50px 50px 50px 50px;
@@ -84,6 +84,7 @@ img {
   -ms-animation: mytest 5s linear 0s infinite normal;
   -o-animation: mytest 5s linear 0s infinite normal;
   animation: mytest 5s linear 0s infinite normal;
+  content: "";
   background-color: #FFFFFF;
   z-index: 2;
 }

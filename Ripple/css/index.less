@@ -8,21 +8,23 @@
   margin:10px;
   z-index:3;
   overflow: hidden;
-  &_content{
-    .ele_size(100px,100px);
+  &_content {
+    .ele_size(100px, 100px);
     .border-radius(10px);
     .position_ab(0px);
     background-color: #adfe9a;
-      z-index:1;
+    z-index: 1;
+    &:before {
+      .ele_size(180px, 180px);
+      .border-radius(50px);
+      .position_ab(-150px, auto, auto, -45px);
+      //.border(whole,red);
+      .animation_rotate(mytest, 5s, linear, 0s, infinite, normal);
+      content: "";
+      background-color: #FFFFFF;
+      z-index: 2;
+    }
   }
-  &_baffle{
-    .ele_size(180px,180px);
-    .border-radius(50px);
-    .position_ab(-150px,auto,auto,-45px);
-    //.border(whole,red);
-    .animation_rotate(mytest,5s, linear, 0s, infinite, normal);
-    background-color: #FFFFFF;
-    z-index:2;
-  }
+
 }
 .keyframes_rotate(mytest,0deg,360deg);
