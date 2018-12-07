@@ -30,7 +30,6 @@ var imgLists = [
    'orange_square.png',
    'pwd_icon.png',
    'rightArrow.png',
-   'saoma.png',
    'selectItemBg.png',
    'usr_icon.png',
    'videoContainer.png',
